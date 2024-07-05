@@ -34,8 +34,4 @@ Author: Peter Kalugin Sergeevich
 
 Github: [@kaluginpeter](https://github.com/kaluginpeter)
 
-Rewiever: Andery Kvichanskiy
-
-Github: [@kvichans](https://github.com/kvichans)
-
 ![Static Badge](https://img.shields.io/badge/version-1.0.0-blue)
