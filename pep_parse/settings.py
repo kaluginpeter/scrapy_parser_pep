@@ -5,7 +5,7 @@ RESULT_DIR = 'results'
 BASE_DIR = Path(__file__).parent
 BOT_NAME = 'pep_parse'
 SPIDER_MODULES = ['pep_parse.spiders']
-NEWSPIDER_MODULE = SPIDER_MODULES
+NEWSPIDER_MODULE = SPIDER_MODULES[0]
 
 FEEDS = {
     f'{RESULT_DIR}/pep_%(time)s.csv': {

@@ -1,6 +1,6 @@
 import csv
-from collections import defaultdict
 import datetime as dt
+from collections import defaultdict
 
 from pep_parse.settings import BASE_DIR, RESULT_DIR
 
@@ -21,10 +21,10 @@ class PepParsePipeline:
         current_time = dt.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
         filename = self.result_dir / f'status_summary_{current_time}.csv'
         with open(filename, mode='w', encoding='utf-8') as csvfile:
-            csv.DictWriter(csvfile).writerows([
+            csv.writer(csvfile).writerows((
                 ('Статус', 'Количество'),
                 *self.count_pep_statuses.items(),
                 ('Total', sum(
                     self.count_pep_statuses.values()
                 ))
-            ])
+            ))
