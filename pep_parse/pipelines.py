@@ -21,10 +21,12 @@ class PepParsePipeline:
         current_time = dt.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
         filename = self.result_dir / f'status_summary_{current_time}.csv'
         with open(filename, mode='w', encoding='utf-8') as csvfile:
-            csv.writer(csvfile).writerows((
+            csv.writer(
+                csvfile, dialect=csv.unix_dialect, quoting=csv.QUOTE_NONE
+            ).writerows((
                 ('Статус', 'Количество'),
                 *self.count_pep_statuses.items(),
-                ('Total', sum(
+                ('Всего', sum(
                     self.count_pep_statuses.values()
                 ))
             ))
