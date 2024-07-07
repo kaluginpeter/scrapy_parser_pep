@@ -4,9 +4,8 @@ from pathlib import Path
 RESULT_DIR = 'results'
 BASE_DIR = Path(__file__).parent
 BOT_NAME = 'pep_parse'
-SPIDER_MODULE = 'pep_parse.spiders'
-SPIDER_MODULES = [SPIDER_MODULE]
-NEWSPIDER_MODULE = SPIDER_MODULE
+NEWSPIDER_MODULE = 'pep_parse.spiders'
+SPIDER_MODULES = [NEWSPIDER_MODULE]
 
 FEEDS = {
     f'{RESULT_DIR}/pep_%(time)s.csv': {
